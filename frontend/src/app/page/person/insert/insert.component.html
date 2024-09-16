@@ -1,0 +1,71 @@
+<div class="p-3">
+	<div class="card">
+		<div class="card-header">
+			Registrar datos
+		</div>
+		<div class="card-body">
+			<form [formGroup]="frmInsertPerson">
+				<div class="row">
+					<div class="col-md-3 mb-3">
+						<label for="" class="form-label">Nombre</label>
+						<input type="text" formControlName="firstName" class="form-control">
+						@if((firstNameFb.touched || firstNameFb.dirty) && firstNameFb.errors && firstNameFb.hasError('required')) {
+							<div style="color: red;font-size: 12px;font-weight: bold;">Este campo es requerido</div>
+						}
+					</div>
+					<div class="col-md-3 mb-3">
+						<label for="" class="form-label">Apellido</label>
+						<input type="text" formControlName="surName" class="form-control">
+						@if((surNameFb.touched || surNameFb.dirty) && surNameFb.errors && surNameFb.hasError('required')) {
+							<div style="color: red;font-size: 12px;font-weight: bold;">Este campo es requerido</div>
+						}
+					</div>
+					<div class="col-md-3 mb-3">
+						<label for="" class="form-label">DNI</label>
+						<input type="text" formControlName="dni" class="form-control">
+						@if((dniFb.touched || dniFb.dirty) && dniFb.errors && dniFb.hasError('required')) {
+							<div style="color: red;font-size: 12px;font-weight: bold;">Este campo es requerido</div>
+						}
+
+						@if((dniFb.touched || dniFb.dirty) && dniFb.errors && dniFb.hasError('pattern')) {
+							<div>Formato incorrecto</div>
+						}
+					</div>
+					<div class="col-md-3 mb-3">
+						<label for="" class="form-label">Género</label>
+						<div class="radioGroup">
+							<label for="">
+								Masculino
+								<input type="radio" formControlName="gender" value="true">
+							</label>
+							<label for="">
+								Femenino
+								<input type="radio" formControlName="gender" value="false">
+							</label>
+						</div>
+						@if((genderFb.touched || genderFb.dirty) && genderFb.errors && genderFb.hasError('required')) {
+							<div style="color: red;font-size: 12px;font-weight: bold;">Este campo es requerido</div>
+						}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 mb-3">
+						<label for="" class="form-label">Fecha de nacimiento</label>
+						<input type="date" formControlName="birthDate" class="form-control">
+						@if((birthDateFb.touched || birthDateFb.dirty) && birthDateFb.errors && birthDateFb.hasError('required')) {
+							<div style="color: red;font-size: 12px;font-weight: bold;">Este campo es requerido</div>
+						}
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-12 mb-3 text-end">
+						<button class="btn btn-primary" (click)="onClickBtnSubmit()">
+							Registrar datos ingresados
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

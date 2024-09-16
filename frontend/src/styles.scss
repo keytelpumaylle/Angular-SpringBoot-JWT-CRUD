@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.nav-link {
+    cursor: pointer;
+}
+
+.radioGroup {
+    padding: 4px;
+}
+
+.radioGroup > label {
+    margin-left: 15px;
+}
+
+.radioGroup > label > input {
+    display: inline-block;
+    vertical-align: middle;
+}
